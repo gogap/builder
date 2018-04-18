@@ -159,7 +159,7 @@ func (p *Project) Build(data map[string]interface{}, run bool, runArgs []string)
 		return
 	}
 
-	// defer os.Remove(mainFilePath)
+	defer os.Remove(mainFilePath)
 
 	// go get before build
 	appendGetArgs := p.conf.GetStringList("build.args.go-get")
